@@ -1,5 +1,7 @@
 const faker = require('faker');
-const db = require('./index.js')
+const {memberCreate, productCreate, imageCreate} = require('./index.js')
+
+// Seeds only 5 at time. Need to refactor and use insertMany
 
 //Product Images
 const prouductImageGenerator = () => {
@@ -14,31 +16,31 @@ const memberImageGenerator = () => {
   return url;
 };
 
-//Document Storage
-const products = [];
-const members = [];
+// //Document Storage
+// const products = [];
+// const members = [];
 
-for (let i = 0; i < 3; i += 1) {
+// Product Document Creation
+for (let i = 0; i < 5; i += 1) {
   const Brand = faker.commerce.productName();
   const Description = faker.commerce.productDescription();
   const Price = faker.commerce.price();
   const Url = prouductImageGenerator();
-  db.productCreate(Brand,Description, Price, Url)
+  const PrimaryId = i;
+  productCreate(Brand, Description, Price, Url, PrimaryId)
 };
-
-
+// Member Document Creation
 for (let i = 0; i < 5; i += 1) {
   const Name = faker.internet.userName();
   const Skin_type = faker.vehicle.color();
-  db.memberCreate(Name,Skin_type)
+  const PrimaryId = i;
+  memberCreate(Name, Skin_type, PrimaryId)
 };
-
-
-// let images = [];
-// for (let i = 0; i < 5; i += 1) {
-//   const URL = 'test URl string'; // pull URL from S3 array
-//   const Member_id = '';
-
-// }
-
-
+// Image Document  Creation
+for (let i = 0; i < 5; i += 1) {
+  let randomNumber =  Math.floor(Math.random() * (5 - 1+ 1)) + 1;
+  const Url = memberImageGenerator();
+  const Member_id = randomNumber;
+  const Items_used = [randomNumber, randomNumber, randomNumber];
+  imageCreate(Url, Member_id, Items_used )
+}
