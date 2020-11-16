@@ -26,7 +26,7 @@ let imageSchema = new db.Schema({
 	Image_id: {type: Number, unique: true},
 	Url: String,
 	Member_id: String,
-  Items_used: Array
+	Items_used: Array
 })
 
 let Member = new db.model('Member', memberSchema);
@@ -34,6 +34,8 @@ let Product = new db.model('Product', productSchema);
 let Image = new db.model('Image', imageSchema);
 
 // Database Helper Functions
+
+// Create Member Document
 const memberCreate = (name, skin, id) => {
 	Member.create({ Name: `${name}`, Skin_type: `${skin}`, PrimaryId: `${id}`}, function (err, response) {
 		if (err) {
@@ -43,7 +45,7 @@ const memberCreate = (name, skin, id) => {
 		}
 	});
 };
-
+// Create Product Document
 const productCreate = (brand, description, price, url, id) => {
 	Product.create({
 		Brand: `${brand}`,
@@ -58,7 +60,7 @@ const productCreate = (brand, description, price, url, id) => {
 			}
 	});
 }
-
+// Create Image Document
 const imageCreate = (url, memberId, itemsArray) => {
 	Image.create({
 		Url: `${url}`,
@@ -72,9 +74,21 @@ const imageCreate = (url, memberId, itemsArray) => {
 		}
 	})
 }
+// Get Member Function
+const getMember = (id) =>  {
+	return Member.find({PrimaryId: id});
+}
+// Get matching images by product
+const getMatchingImages = (producttId) => {
+	// return all images whos items_used array contain the the input value
+	return Image.find({Items_used: productId})
+}
+// Get all products used for image
+const getProductsUsed = (array) => {
+return Product.find({ PrimaryId: { $in: array } })
+}
 
 
-const getMember = () => Member.find({PrimaryId: 2});
 
 module.exports = {
 	memberCreate,

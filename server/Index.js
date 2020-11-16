@@ -5,12 +5,13 @@ const bodyParser = require('body-parser');
 const app = express()
 const port = 2754
 
-// app.use(express.static(__dirname + '/../client/dist'));
+app.use(express.static(__dirname + '/../client/dist'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/member', (req, res) => {
-  getMember()
+  let memberId = req.query.memberId
+  getMember(memberId)
     .then(results => {
       console.log(results);
       res.status(200).send(results);
