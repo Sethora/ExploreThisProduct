@@ -1,17 +1,26 @@
+
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const SRC_DIR = path.join(__dirname, '/client/src');
+const DIST_DIR = path.join(__dirname, '/client/dist');
 
 module.exports = {
-  entry: path.resolve(__dirname, "./client/src/index.js"),
+  entry: `${SRC_DIR}/index.jsx`,
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, "./public")
+    filename: 'bundle.js',
+    path: DIST_DIR
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Sethora',
-      template: path.resolve(__dirname, './client/src/index.html'),
-      filename: 'index.html'
-    })
-  ]
-}
+  module: {
+    rules: [
+      {
+        test: /\.jsx?/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ["@babel/preset-react"]
+          }
+        }
+      }
+    ]
+  }
+};

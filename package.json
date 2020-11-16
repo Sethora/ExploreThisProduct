@@ -8,7 +8,8 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "server": "nodemon server/index.js"
+    "server": "nodemon server/index.js",
+    "build": "webpack -d --watch"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -20,6 +21,10 @@
     "webpack-cli": "^4.2.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-react": "^7.12.5",
+    "babel-loader": "^8.2.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "nodemon": "^2.0.6"
   }
