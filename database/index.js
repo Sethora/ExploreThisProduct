@@ -79,9 +79,9 @@ const getMember = (id) =>  {
 	return Member.find({PrimaryId: id});
 }
 // Get matching images by product
-const getMatchingImages = (producttId) => {
-	// return all images whos items_used array contain the the input value
-	return Image.find({Items_used: productId})
+const getMatchingImages = (productId) => {
+	// return Image.find({Items_used: productId})
+	return Image.find({}).limit(10)
 }
 // Get all products used for image
 const getProductsUsed = (array) => {
@@ -94,7 +94,8 @@ module.exports = {
 	memberCreate,
 	productCreate,
 	imageCreate,
-	getMember
+	getMember,
+	getMatchingImages
 }
 
 

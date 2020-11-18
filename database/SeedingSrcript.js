@@ -1,27 +1,21 @@
 const faker = require('faker');
 const {memberCreate, productCreate, imageCreate} = require('./index.js')
 
-// Seeds only 5 at time. Need to refactor and use insertMany
-
 //Product Images
 const prouductImageGenerator = () => {
   let randomNumber = Math.floor(Math.random() * (6 - 1+ 1)) + 1;
-  let url = `https://quesbucket.s3.us-east-2.amazonaws.com/Module+Photos/woman${randomNumber}.jpg`
+  let url = `https://quesbucket.s3.us-east-2.amazonaws.com/Module+Photos/product${randomNumber}.jpg`
   return url;
 };
 // Member Images
 const memberImageGenerator = () => {
   let randomNumber =  Math.floor(Math.random() * (5 - 1+ 1)) + 1;
-  let url = `https://quesbucket.s3.us-east-2.amazonaws.com/Module+Photos/product${randomNumber}.jpg`
+  let url = `https://quesbucket.s3.us-east-2.amazonaws.com/Module+Photos/woman${randomNumber}.jpg`
   return url;
 };
 
-// //Document Storage
-// const products = [];
-// const members = [];
-
 // Product Document Creation
-for (let i = 0; i < 20; i += 1) {
+for (let i = 0; i < 50; i += 1) {
   const Brand = faker.commerce.productName();
   const Description = faker.commerce.productDescription();
   const Price = faker.commerce.price();
@@ -30,17 +24,17 @@ for (let i = 0; i < 20; i += 1) {
   productCreate(Brand, Description, Price, Url, PrimaryId)
 };
 // Member Document Creation
-for (let i = 0; i < 20; i += 1) {
+for (let i = 0; i < 50; i += 1) {
   const Name = faker.internet.userName();
   const Skin_type = faker.vehicle.color();
   const PrimaryId = i;
   memberCreate(Name, Skin_type, PrimaryId)
 };
 // Image Document  Creation
-for (let i = 0; i < 20; i += 1) {
-  let randomNumber1 = Math.floor(Math.random() * (20 - 1+ 1)) + 1;
-  let randomNumber2 = Math.floor(Math.random() * (20 - 1+ 1)) + 1;
-  let randomNumber3 = Math.floor(Math.random() * (20 - 1+ 1)) + 1;
+for (let i = 0; i < 50; i += 1) {
+  let randomNumber1 = Math.floor(Math.random() * (50 - 1+ 1)) + 1;
+  let randomNumber2 = Math.floor(Math.random() * (50 - 1+ 1)) + 1;
+  let randomNumber3 = Math.floor(Math.random() * (50 - 1+ 1)) + 1;
   const Url = memberImageGenerator();
   const Member_id = randomNumber1;
   const Items_used = [randomNumber1, randomNumber2, randomNumber3];

@@ -1,5 +1,5 @@
 const express = require('express')
-const {getMember} =  require('../database/index.js')
+const {getMember, getMatchingImages} =  require('../database/index.js')
 const bodyParser = require('body-parser');
 
 const app = express()
@@ -20,6 +20,18 @@ app.get('/member', (req, res) => {
       console.log(err);
       res.status(400).send(err);
     })
+})
+
+app.get('/images', (req, res)=> {
+  // let randomNumber = Math.floor(Math.random() * (20 - 1+ 1)) + 1;
+  getMatchingImages()
+  .then((results)=>{
+    res.status(200).send(results)
+  })
+  .catch((err)=>{
+    console.log(err)
+    res.status(400).send(err)
+  })
 })
 
 app.listen(port, () => {
