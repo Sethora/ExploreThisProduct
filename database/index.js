@@ -88,14 +88,13 @@ const getProductsUsed = (array) => {
 return Product.find({ PrimaryId: { $in: array } })
 }
 
-
-
 module.exports = {
 	memberCreate,
 	productCreate,
 	imageCreate,
 	getMember,
-	getMatchingImages
+	getMatchingImages,
+	getProductsUsed
 }
 
 
