@@ -34,9 +34,9 @@ app.get('/images', (req, res)=> {
   })
 })
 
-if (process.env.NODE_ENV !== 'test') {
-  app.listen(port);
-}
+// if (process.env.NODE_ENV !== 'test') {
+//   app.listen(3000);
+// }
 
 app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`)

@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  scrollbar-color: transparent transparent; /* thumb and track color */
+  scrollbar-width: 0px;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: none;
+}
+
+* {
+  -ms-overflow-style: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 980px;
+  height: 291px;
+}
+
+.header {
+  text-align: center;
+  height: inherit;
+}
+
+.menu {
+  display: flex;
+  place-content: space-between;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  height: 198px;
+  width: 980px;
+  filter: drop-shadow(0 0 10px #0003);
+  perspective: 100px;
+}
+
+.carousel_box {
+  display: flex;
+}
+
+.direction {
+  width: 32px;
+}
+.slide {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.slide:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-40%,70px);
+}
+
+.imageSlide {
+  padding: 15px;
+}
+
+.imageSlide:hover {
+opacity: 0.5;
+}
+
+.carousel_nav {
+  text-align: center;
+  height: 15px;
+}
+
+.nav_list,
+.nav_item {
+  display: inline-block;
+}
+
+.nav_button {
+  display: inline-block;
+  width: 1.0rem;
+  height: 1.0rem;
+  background-color: #333;
+  background-clip: content-box;
+  border: 0.25rem solid transparent;
+  border-radius: 50%;
+  font-size: 0;
+  transition: transform 0.1s;
+}
+

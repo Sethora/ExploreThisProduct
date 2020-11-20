@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import Carousel from './components/Carousel.jsx'
+import ExploreThisProduct from './components/ETPmodule.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -35,10 +35,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <h2>Explore This Product</h2>{
-          this.state.hasData ?
-          <Carousel images={this.state.memberImages}/> : null
+      <div>
+        {this.state.hasData ?
+          <ExploreThisProduct images={this.state.memberImages}/> : null
         }
       </div>
     )
