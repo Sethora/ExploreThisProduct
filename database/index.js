@@ -85,7 +85,8 @@ const getMatchingImages = (productId) => {
 }
 // Get all products used for image
 const getProductsUsed = (array) => {
-return Product.find({ PrimaryId: { $in: array } })
+	const products = array
+	return Product.find({ PrimaryId: { $in: products } })
 }
 
 module.exports = {

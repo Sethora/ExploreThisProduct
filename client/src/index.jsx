@@ -18,12 +18,12 @@ class App extends React.Component {
     this.setState({
       memberImages: array,
       hasData: true
-
     })
   }
 
+
   componentDidMount() {
-    axios.get('/images')
+    axios.get('http://127.0.0.1:2754/api/images')
     .then((response)=> {
       console.log(response)
       this.setImages(response.data);
@@ -31,6 +31,11 @@ class App extends React.Component {
     .catch((error)=>{
       console.log(error)
     })
+  }
+
+  getMember () {
+
+
   }
 
   render() {
