@@ -2,11 +2,14 @@ import React from 'react';
 
 const Slide = (props) => {
   const handleClick = () => {
-    const memberId = props.image.Member_id
+    const memberId = props.image.Member_id;
     const url = props.image.Url;
-    const items = props.image.Items_used
-    props.imageClick(memberId, url, items)
-    props.getMember()
+    const items = props.image.Items_used;
+    props.imageClick(memberId, url, items);
+    props.getMember();
+
+
+    props.getProducts(items);
   }
 
   return (

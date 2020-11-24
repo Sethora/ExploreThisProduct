@@ -15,7 +15,6 @@ app.get('/api/member', (req, res) => {
   let memberId = req.query.memberId
   getMember(memberId)
     .then(results => {
-      console.log(results);
       res.status(200).send(results);
     })
     .catch((err)=> {
@@ -37,7 +36,8 @@ app.get('/api/images', (req, res)=> {
 })
 
 app.get('/api/products', (req, res)=> {
-  getProductsUsed(req.query.items)
+  console.log(req.query.products)
+  getProductsUsed(req.query.products)
   .then((results)=>{
     res.status(200).send(results)
   })
@@ -47,15 +47,13 @@ app.get('/api/products', (req, res)=> {
   })
 })
 
-
-
-// if (process.env.NODE_ENV !== 'test') {
-//   app.listen(3000);
-// }
-
 app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`)
 })
 
 
 module.exports = app;
+
+// if (process.env.NODE_ENV !== 'test') {
+//   app.listen(3000);
+// }
