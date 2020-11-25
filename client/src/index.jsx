@@ -23,7 +23,7 @@ class App extends React.Component {
 
 
   componentDidMount() {
-    axios.get('http://127.0.0.1:2754/api/images')
+    axios.get('http://127.0.0.1:2754/api/etp/images')
     .then((response)=> {
       console.log(response)
       this.setImages(response.data);
@@ -33,10 +33,6 @@ class App extends React.Component {
     })
   }
 
-  getMember () {
-
-
-  }
 
   render() {
     return (

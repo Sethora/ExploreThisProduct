@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MODAL_UserPanel = {
-  height: '140px',
+  height: '63px',
   backgroundColor: '#FFF',
   fontFamily: 'helvetica neue, helvetica, arial, sans-serif',
   paddingRight: '20px'
@@ -29,7 +29,7 @@ const user_info = {
   display: 'flex',
   justifyContent: 'space-between',
   color: '#757575',
-  fontSize: '12px'
+  fontSize: '10px'
 }
 
 const avatar_user_box = {
@@ -50,12 +50,12 @@ const badges = {
 }
 
 const UserPanel = (props) => {
-  console.log('user panel tings',props)
+
   return (
     <div style={MODAL_UserPanel}>
       <div className="image-details">
         <div style={image_details_header}>
-          <div className="image-title-wrapper"><b>blues</b> <span class="group-string">Makeup Is Life</span></div>
+          <div className="image-title-wrapper"><b>blues</b> <span class="group-string">in Makeup Is Life</span></div>
           <div className="image-title-right" style={{color:' #757575'}}>
             <span>Nov 20</span>
             <span style={pipe}>|</span>
@@ -75,16 +75,16 @@ const UserPanel = (props) => {
             </div>
             <div style={badges}>
               <div>
-                <img height='15px' src="https://quesbucket.s3.us-east-2.amazonaws.com/ETPicons/insider-badge.png"></img>
+                <img height='12px' src="https://quesbucket.s3.us-east-2.amazonaws.com/ETPicons/insider-badge.png"></img>
               </div>
               <div style={{paddingLeft: '3px'}}>
-                <img height='15px' src="https://quesbucket.s3.us-east-2.amazonaws.com/ETPicons/rookie-badge.png"></img>
+                <img height='12px' src="https://quesbucket.s3.us-east-2.amazonaws.com/ETPicons/rookie-badge.png"></img>
               </div>
             </div>
           </div>
             <div class="skin-type">Skin Type: <span>{props.currentMember.Skin_type}</span></div>
-            <div>This is a little look that I did for my first day as a Beauty Advisor!! I was super nervous, but this little look helped give me a little kick of confidence. The Patrick Starr liquid eyeshadow blended out a little too matte, but it’s still an amazing product.</div>
-        </div>
+          </div>
+
         </div>
         <div className="share-button-right">
           <img height='15px' src="https://quesbucket.s3.us-east-2.amazonaws.com/ETPicons/share.png"></img>

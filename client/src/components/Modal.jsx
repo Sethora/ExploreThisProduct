@@ -21,20 +21,20 @@ const MODAL_STYLES = {
   overflowX: 'auto',
   left: '50%',
   top: '35%',
-  transform: 'translate(-50%, -50%)'
+  transform: 'translate(-50%, -50%)',
+  borderRadius: '5px'
 }
 
 const MODAL_Header = {
-  height: '55px',
+  height: '24px',
   backgroundColor: '#FFF',
-  fontSize: '14px',
+  fontSize: '12.5px',
   fontWeight: 700,
   fontFamily: "helvetica neue, helvetica, arial, sans-serif",
-  lineHeight: '60px',
   display: 'inline-block',
   width: '100%',
   textAlign: 'center',
-  borderBottom: 'solid 1px #eee'
+  borderBottom: '2px solid whitesmoke'
 }
 
 const MODAL_Main = {
@@ -44,8 +44,8 @@ const MODAL_Main = {
 }
 
 const MODAL_ImageBox = {
-  height: '318px',
-  width: '425px',
+  height: '335px',
+  width: '440px',
   backgroundColor: '#FFF'
 }
 
@@ -72,7 +72,6 @@ const Modal = (props) => {
   // products used
   const {products = [{}]} = props;
 
-  console.log('inside of modal props',props)
 
   return (
     <div>
@@ -82,7 +81,7 @@ const Modal = (props) => {
           <span>See It In Real Life</span>
 
           <div style={{float: "right"}} onClick={props.closeModal}>
-            <img height='15px' src="https://quesbucket.s3.us-east-2.amazonaws.com/ETPicons/close.svg"/>
+            <img height='12px' src="https://quesbucket.s3.us-east-2.amazonaws.com/ETPicons/close.svg"/>
           </div>
 
         </div>
@@ -92,7 +91,7 @@ const Modal = (props) => {
           </div>
             <div style={MODAL_InfoPanel}>
               <UserPanel currentMember={props.currentMember[0]}/>
-              <ProductPanel />
+              <ProductPanel products={products}/>
           </div>
         </div>
       </div>

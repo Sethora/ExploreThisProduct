@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/../client/dist'));
 
-app.get('/api/member', (req, res) => {
+app.get('/api/etp/member', (req, res) => {
   let memberId = req.query.memberId
   getMember(memberId)
     .then(results => {
@@ -23,7 +23,7 @@ app.get('/api/member', (req, res) => {
     })
 })
 
-app.get('/api/images', (req, res)=> {
+app.get('/api/etp/images', (req, res)=> {
   // let randomNumber = Math.floor(Math.random() * (20 - 1+ 1)) + 1;
   getMatchingImages()
   .then((results)=>{
@@ -35,7 +35,7 @@ app.get('/api/images', (req, res)=> {
   })
 })
 
-app.get('/api/products', (req, res)=> {
+app.get('/api/etp/products', (req, res)=> {
   console.log(req.query.products)
   getProductsUsed(req.query.products)
   .then((results)=>{
