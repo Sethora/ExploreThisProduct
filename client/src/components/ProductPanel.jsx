@@ -1,123 +1,100 @@
 import React from 'react';
+import styles from '../styles/productpanel.module.css'
+import SingleProduct from './SingleProduct.jsx';
 
-const MODAL_ProductPanel = {
-  height: '260px',
-  width: '425px',
-  display: 'grid',
-  gridTemplateRows: '15% 85%'
-}
+class ProductPanel extends React.Component {
+  constructor(props) {
+    super(props)
+    this.myInput = React.createRef()
 
-const ProductPanel_Header = {
-  backgroundColor: '#12c1ce',
-  marginLeft: '9px',
-  alignSelf: 'center'
-}
+    this.state = {
+      applied: false
+    }
+  }
 
-const InnerCarousel_Box = {
-  display: 'flex',
-  height: '100%'
-}
+  backClick () {
+    if (this.state.applied) {
+      this.setState({applied: false})
+    }
+  }
 
-const singleProduct = {
-  height: '210px',
-  width : '110px',
-  backgroundColor: '#8e9899',
-  margin: '0 4px',
-  display:'flex',
-  flexDirection: 'column',
-  padding: '5px',
-  justifyContent: 'center',
-  boxShadow: '0 3px 10px 0 rgba(150,150,150,.45)',
-  borderRadius: '4px'
-}
+  forwardClick () {
+    if (!this.state.applied) {
+      this.setState({applied: true})
+    }
+  }
 
-const productImage = {
-  width: '94px',
-  height: '112px',
-  alignSelf: 'center'
-}
+  render() {
 
-const productBrand = {
-  fontSize: '11px',
-  fontWeight: 600,
-  overflow: 'hidden',
-  textOverflow: 'ellipsis'
-}
+    const {products = [{}]} = this.props;
+    const {Brand = ''} = products[0];
+    const {Description = ''} = products[0];
+    const {Price = ''} = products[0];
+    const {Url = ''} = products[0];
 
-const productDescription = {
-  position: 'relative',
-  lineHeight: '14px',
-  letterSpacing: '-.29px',
-  marginBottom: '6px',
-  height: '28px',
-  overflow: 'hidden',
-  textOverflow: 'ellipsis'
-}
-
-const productPrice = {
-  fontSize: '13px',
-  fontWeight: 600
-}
-
-const addButton = {
-  height: '22px',
-  width: '55px',
-  border: '2px solid rgb(0, 0, 0)',
-  borderRadius: '18px',
-  fontSize: '10px',
-  lineHeight: '24px',
-  fontWeight: 600,
-  textAlign: 'center'
-}
-
-const inner_carousel_next = {
-  position: 'fixed',
-  right: '1%',
-  top: '64%',
-  height: '42x',
-  width: '42px',
-  backgroundColor: 'rgb(0, 0, 0)'
-}
-
-const inner_carousel_prev = {
-  position: 'fixed',
-  right: '47%',
-  top: '64%',
-  height: '42x',
-  width: '42px',
-  backgroundColor: 'rgb(25, 128, 25)'
-}
-
-const ProductPanel = (props) => {
-
-  const {products = [{}]} = props;
-  const {Brand = ''} = products[0];
-  const {Description = ''} = products[0];
-  const {Price = ''} = products[0];
-  const {Url = ''} = products[0];
-
-  return (
-    <div style={MODAL_ProductPanel}>
-      <div style={ProductPanel_Header}><span>Shop This Photo</span></div>
-      <div style={InnerCarousel_Box}>
-        <div style={singleProduct}>
-          <img src={Url} style ={productImage} ></img>
-          <span style={productBrand}>{Brand}</span>
-          <span style={productDescription}>{Description}</span>
-          <span style={productPrice}>${Price}.00</span>
-          <div style={addButton}>ADD</div>
-      </div>
-        <div style={singleProduct}></div>
-        <div style={singleProduct}></div>
-        <div style={singleProduct}></div>
-        <div style={singleProduct}></div>
-        <div style={singleProduct}></div>
+    return(
+      <div className={styles.productpanel}>
+        <div><span className={styles.productpanel_header}>Shop This Photo</span></div>
+        <div className={styles.inner_carousel_box} >
+          {/* {products.map((item)=> {
+            return <SingleProduct applied={this.state.applied} product = {item} />
+          })} */}
+          <SingleProduct applied={this.state.applied} product={products[0]}/>
+          <SingleProduct applied={this.state.applied} product={products[0]}/>
+          <SingleProduct applied={this.state.applied} product={products[0]}/>
+          <SingleProduct applied={this.state.applied} product={products[0]}/>
+          <SingleProduct applied={this.state.applied} product={products[0]}/>
+          <SingleProduct applied={this.state.applied} product={products[0]}/>
+          <SingleProduct applied={this.state.applied} product={products[0]}/>
+        </div>
+        <div className={styles.inner_carousel_prev} onClick={this.backClick.bind(this)}>prev</div>
+        <div className={styles.inner_carousel_next} onClick={this.forwardClick.bind(this)}>next</div>
       </div>
 
-      <div style={inner_carousel_prev}>prev</div>
-      <div style={inner_carousel_next}>next</div>
-    </div>
-  )
+    )
+  }
 }
 
 export default ProductPanel;
+
+
+// const MODAL_ProductPanel = {
+//   height: '320px',
+//   // width: '425px',
+//   display: 'grid',
+//   gridTemplateRows: '15% 85%'
+// }
+
+// const ProductPanel_Header = {
+//   fontFamily: 'helvetica neue,helvetica,arial,sans-serif',
+//   fontSize: '16px',
+//   fontWeight: '700',
+//   margin: '8px 0',
+//   display: 'block'
+// }
+
+
+// const InnerCarousel_Box = {
+//   display: 'flex',
+//   height: '300px',
+//   overflow: 'hidden',
+//   overflowX: 'scroll'
+// }
+
+// const inner_carousel_next = {
+//   position: 'fixed',
+//   right: '1%',
+//   top: '54%',
+//   height: '42px',
+//   width: '42px',
+//   backgroundColor: 'rgb(0, 0, 0)'
+// }
+
+// const inner_carousel_prev = {
+//   position: 'fixed',
+//   right: '47%',
+//   top: '54%',
+//   height: '42px',
+//   width: '42px',
+//   backgroundColor: 'rgb(0, 0, 0)'
+// }

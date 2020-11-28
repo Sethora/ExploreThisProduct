@@ -47,7 +47,7 @@ app.get('/api/etp/products', (req, res)=> {
   })
 })
 
-app.listen(port, () => {
+app.listen(port, (req, res, next) => {
   console.log(`Listening at http://localhost:${port}`)
 })
 
