@@ -1,0 +1,31 @@
+  .menu  {
+  display: flex;
+  font-family: helvetica neue,helvetica,arial,sans-serif;
+}
+
+  .view_by_color {
+  margin-left: auto;
+}
+
+  .bold {
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+  .space_between {
+padding: 0px 2px 0 9px;
+}
+
+  .beauty_box {
+display: flex;
+}
+
+  .beauty_matches {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+  .menu_middle {
+  display: flex;
+  font-size: 15px;
+}

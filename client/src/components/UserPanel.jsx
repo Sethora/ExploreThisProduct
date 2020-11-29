@@ -2,7 +2,6 @@ import React from 'react';
 import styles from '../styles/userpanel.module.css'
 
 const UserPanel = (props) => {
-  console.log('USERPANEL STYLES',styles)
   const {Name, Skin_type} = props.currentMember;
 
   return (
@@ -49,55 +48,3 @@ const UserPanel = (props) => {
 }
 
 export default UserPanel;
-
-// const MODAL_UserPanel = {
-//   height: '63px',
-//   backgroundColor: '#FFF',
-//   fontFamily: 'helvetica neue, helvetica, arial, sans-serif',
-//   paddingRight: '20px'
-// }
-
-// const image_details_header = {
-//   display: 'flex',
-//   justifyContent: 'space-between',
-//   fontSize: '14px',
-//   marginBottom: '10px'
-// }
-
-// const pipe = {
-//   padding: '0 5px'
-// }
-
-// const avatar = {
-//   verticalAlign: 'middle',
-//   width: '25px',
-//   height: '25px',
-//   borderRadius: '50%',
-//   opacity: '.75',
-//   paddingRight: '6px'
-// }
-
-// const user_info = {
-//   display: 'flex',
-//   height: '38px',
-//   justifyContent: 'space-between',
-//   color: '#757575',
-//   fontSize: '12px'
-// }
-
-// const avatar_user_box = {
-//   display: 'flex'
-// }
-
-// const user_and_badges = {
-//   display: 'flex'
-// }
-
-// const username = {
-//   fontWeight: '600'
-// }
-
-// const badges = {
-//   display: 'flex',
-//   paddingLeft: '5px'
-// }

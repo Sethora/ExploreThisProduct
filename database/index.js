@@ -23,9 +23,9 @@ let productSchema = new db.Schema({
 })
 
 let imageSchema = new db.Schema({
-	Image_id: {type: Number, unique: true},
+	Image_id: {type: Number, unique: false},
 	Url: String,
-	Member_id: String,
+	Member_id: Number,
 	Items_used: Array
 })
 
@@ -80,8 +80,8 @@ const getMember = (id) =>  {
 }
 // Get matching images by product
 const getMatchingImages = (productId) => {
-	// return Image.find({Items_used: productId})
-	return Image.find({}).limit(10)
+	// return Image.find({}).limit(10)
+	return Image.find({Items_used: productId})
 }
 // Get all products used for image
 const getProductsUsed = (array) => {

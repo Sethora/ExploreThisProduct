@@ -1,5 +1,5 @@
 {
-  "name": "ExploreThisProduct",
+  "name": "etp",
   "version": "1.0",
   "description": "",
   "author": "Quentin McMillian",
@@ -8,9 +8,10 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "server": "node ./server/server.js",
+    "server": "nodemon ./server/server.js",
     "build": "webpack --watch",
     "react-dev": "webpack -d --watch",
+    "seed": " node ./database/SeedingSrcript.js",
     "test": "jest --coverage"
   },
   "dependencies": {

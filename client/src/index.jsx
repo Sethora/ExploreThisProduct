@@ -22,7 +22,13 @@ class App extends React.Component {
 
 
   componentDidMount() {
-    axios.get('/api/etp/images')
+    const randomNumber = Math.floor(Math.random() * (50 - 1+ 1)) + 1;
+
+    axios.get('/api/etp/images', {
+      params: {
+        id: randomNumber
+      }
+    })
     .then((response)=> {
       console.log(response)
       this.setImages(response.data);
@@ -30,6 +36,15 @@ class App extends React.Component {
     .catch((error)=>{
       console.log(error)
     })
+
+    // axios.get('/api/etp/images')
+    // .then((response)=> {
+    //   console.log(response)
+    //   // this.setImages(response.data);
+    // })
+    // .catch((error)=>{
+    //   console.log(error)
+    // })
   }
 
 

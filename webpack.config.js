@@ -25,7 +25,7 @@ module.exports = {
       {
         test: /\.css$/i,
         loaders: ['style-loader', 'css-loader']
-        // include: `${styleSheet}`
+
       }
     ]
   }

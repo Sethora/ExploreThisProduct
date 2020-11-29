@@ -33,35 +33,3 @@ const Menu = (props) => {
 
 
 export default Menu;
-
-
-// const menu =  {
-//   display: 'flex',
-//   fontFamily: 'helvetica neue,helvetica,arial,sans-serif'
-// }
-
-// const view_by_color = {
-//   marginLeft: 'auto'
-// }
-
-// const bold = {
-//   fontWeight: 700,
-//   lineHeight: 1.25
-// }
-
-// const space_between = {
-// padding: '0px 2px 0 9px'
-// }
-// const beauty_box = {
-// display: 'flex'
-// }
-// const beauty_matches = {
-//   fontWeight: 600,
-//   fontSize: '13px'
-// }
-
-// const menu_middle = {
-//   display: 'flex',
-//   fontSize: '15px'
-// }
-

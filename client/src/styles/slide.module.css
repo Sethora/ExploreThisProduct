@@ -1,0 +1,7 @@
+.image_slide {
+  padding: 8px;
+}
+
+.image_slide:hover {
+opacity: 0.5;
+}
