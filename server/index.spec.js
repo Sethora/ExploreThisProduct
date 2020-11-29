@@ -1,4 +1,4 @@
-const app = require('./index.js');
+const app = require('./server.js');
 const request = require('supertest');
 
 test('should return 200 status code', async (done)=> {

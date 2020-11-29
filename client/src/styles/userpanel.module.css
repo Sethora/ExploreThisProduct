@@ -1,0 +1,51 @@
+  .userpanel{
+  height: 63px;
+  background-color: #FFF;
+  font-family: helvetica neue, helvetica, arial, sans-serif;
+  padding-right: 20px;
+}
+
+  .image_details_header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+  .pipe {
+  padding: 0 5px;
+}
+
+  .avatar {
+  vertical-align: middle;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  opacity: .75;
+  padding-right: 6px;
+}
+
+  .user_info {
+  display: flex;
+  height: 38px;
+  justify-content: space-between;
+  color: #757575;
+  font-size: 12px;
+}
+
+  .avatar_user_box {
+  display: flex;
+}
+
+  .user_and_badges {
+  display: flex;
+}
+
+  .username {
+  font-weight: 600;
+}
+
+  .badges {
+  display: flex;
+  padding-left: 5px;
+}

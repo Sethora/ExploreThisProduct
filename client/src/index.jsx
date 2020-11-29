@@ -10,7 +10,6 @@ class App extends React.Component {
       memberImages: [],
       hasData: false
     }
-    this.componentDidMount =  this.componentDidMount.bind(this);
     this.setImages= this.setImages.bind(this);
   }
 
@@ -23,7 +22,13 @@ class App extends React.Component {
 
 
   componentDidMount() {
-    axios.get('http://127.0.0.1:2754/api/etp/images')
+    const randomNumber = Math.floor(Math.random() * (50 - 1+ 1)) + 1;
+
+    axios.get('/api/etp/images', {
+      params: {
+        id: randomNumber
+      }
+    })
     .then((response)=> {
       console.log(response)
       this.setImages(response.data);
@@ -31,6 +36,15 @@ class App extends React.Component {
     .catch((error)=>{
       console.log(error)
     })
+
+    // axios.get('/api/etp/images')
+    // .then((response)=> {
+    //   console.log(response)
+    //   // this.setImages(response.data);
+    // })
+    // .catch((error)=>{
+    //   console.log(error)
+    // })
   }
 
 
@@ -47,4 +61,4 @@ class App extends React.Component {
 
 
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('etpApp'));

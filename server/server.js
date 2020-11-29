@@ -24,8 +24,9 @@ app.get('/api/etp/member', (req, res) => {
 })
 
 app.get('/api/etp/images', (req, res)=> {
-  // let randomNumber = Math.floor(Math.random() * (20 - 1+ 1)) + 1;
-  getMatchingImages()
+  const productId = Number(req.query.id)
+
+  getMatchingImages(productId)
   .then((results)=>{
     res.status(200).send(results)
   })
@@ -47,7 +48,7 @@ app.get('/api/etp/products', (req, res)=> {
   })
 })
 
-app.listen(port, () => {
+app.listen(port, (req, res, next) => {
   console.log(`Listening at http://localhost:${port}`)
 })
 
