@@ -22,7 +22,7 @@
   border-radius: 4px;
   font-family: helvetica neue,helvetica,arial,sans-serif;
   transition: all .3s ease-in-out;
-  transform: translateX(-250%);
+  transform: translateX(-175%);
   transition: transform 0.45s ease 0s;
 }
 

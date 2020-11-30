@@ -8,7 +8,7 @@ const UserPanel = (props) => {
     <div className={styles.userpanel}>
       <div className="image-details">
         <div className={styles.image_details_header}>
-          <div className="image-title-wrapper"><b>blues</b><span>in Makeup Is Life</span></div>
+          <div className="image-title-wrapper"><b style={{paddingRight:'3px'}}>blues</b><span>in Makeup Is Life</span></div>
           <div className="image-title-right" style={{color:' #757575'}}>
             <span>Nov 20</span>
             <span className={styles.pipe}>|</span>

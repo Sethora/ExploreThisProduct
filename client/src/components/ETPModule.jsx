@@ -41,11 +41,8 @@ class ExploreThisProduct extends React.Component {
   }
 
   getMember() {
-    axios.get('/api/etp/member', {
-      params: {
-        memberId: this.state.memberId
-      }
-    })
+    const id = this.state.memberId
+    axios.get(`/api/products/member/${id}`)
     .then((response)=> {
       // console.log(response.data)
         this.setState({currentMember: response.data})
@@ -55,12 +52,8 @@ class ExploreThisProduct extends React.Component {
     })
   }
 
-  getProducts(items) {
-    axios.get('/api/etp/products', {
-      params: {
-        products: items
-      }
-    })
+  getProducts(ids) {
+    axios.get(`/api/products/${ids}`)
     .then((response)=> {
       // console.log(response.data)
       this.setState({products: response.data})

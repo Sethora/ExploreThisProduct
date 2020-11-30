@@ -1,10 +1,9 @@
 var db = require('mongoose');
 var url = "mongodb://localhost/etp";
 
-db.connect(url, function(err, db) {
-  if (err) throw err;
-	console.log("Database created!");
-});
+db.connect(url, { useNewUrlParser: true, useCreateIndex: true })
+    .then(result => console.log('Database connected '))
+    .catch(err => console.log('connection error ', err));
 
 let memberSchema = new db.Schema({
 	Member_id: {type: Number, unique: true},
@@ -81,12 +80,12 @@ const getMember = (id) =>  {
 // Get matching images by product
 const getMatchingImages = (productId) => {
 	// return Image.find({}).limit(10)
-	return Image.find({Items_used: productId})
+	return Image.find({Items_used: productId});
 }
 // Get all products used for image
 const getProductsUsed = (array) => {
 	const products = array
-	return Product.find({ PrimaryId: { $in: products } })
+	return Product.find({ PrimaryId: { $in: products } });
 }
 
 module.exports = {
