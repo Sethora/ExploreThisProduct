@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import ExploreThisProduct from './components/ETPmodule.jsx'
+import ExploreThisProduct from './components/ETPModule.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -20,31 +20,18 @@ class App extends React.Component {
     })
   }
 
-
   componentDidMount() {
-    const randomNumber = Math.floor(Math.random() * (50 - 1+ 1)) + 1;
-
-    axios.get('/api/etp/images', {
-      params: {
-        id: randomNumber
-      }
-    })
+    const url = window.location.href.split('/');
+    const candidateId = url[url.length - 1];
+    const id = (isNaN(Number(candidateId)) || candidateId === '') ? 2 : Number(candidateId);
+    axios.get(`/api/products/images/${id}`)
     .then((response)=> {
       console.log(response)
       this.setImages(response.data);
     })
     .catch((error)=>{
       console.log(error)
-    })
-
-    // axios.get('/api/etp/images')
-    // .then((response)=> {
-    //   console.log(response)
-    //   // this.setImages(response.data);
-    // })
-    // .catch((error)=>{
-    //   console.log(error)
-    // })
+    });
   }
 
 
@@ -59,6 +46,7 @@ class App extends React.Component {
   }
 }
 
+// hello
 
 
 ReactDOM.render(<App />, document.getElementById('etpApp'));

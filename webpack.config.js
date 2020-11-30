@@ -1,20 +1,20 @@
-const path = require('path');
-const SRC_DIR = path.join(__dirname, '/client/src');
-const DIST_DIR = path.join(__dirname, '/client/dist');
-const styleSheet = path.join(__dirname, '/client/dist/stylesheet.css');
+const resolve = require('path').resolve;
+const SRC_DIR = resolve(__dirname, './client/src/index.jsx');
+const DIST_DIR = resolve(__dirname, './client/dist');
+// const styleSheet = path.join(__dirname, '/client/dist/stylesheet.css');
 
 
 module.exports = {
-  entry: `${SRC_DIR}/index.jsx`,
+  entry: SRC_DIR,
   output: {
-    filename: 'bundle.js',
-    path: DIST_DIR
+    path: DIST_DIR,
+    filename: 'bundle.js'
   },
   module: {
     rules: [
       {
-        test: /\.jsx?/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -23,9 +23,11 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/i,
-        loaders: ['style-loader', 'css-loader']
-
+        test: /\.css$/,
+        use: [
+          {loader: 'style-loader'},
+          {loader: 'css-loader', options: {modules: true}}
+        ]
       }
     ]
   }
