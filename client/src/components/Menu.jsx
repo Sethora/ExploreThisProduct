@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/menu.module.css'
+import styles from '../styles/menu.module.css';
 
 const Menu = (props) => {
 
@@ -11,7 +11,7 @@ const Menu = (props) => {
         <div className={styles.space_between}>
           <img height="17px"src="https://quesbucket.s3.us-east-2.amazonaws.com/ETPicons/square.svg"/>
         </div>
-          <span>Show photos from my</span>
+        <span>Show photos from my</span>
         <div className={styles.beauty_box}>
           <div className={styles.space_between}>
             <img height='20px'src="https://quesbucket.s3.us-east-2.amazonaws.com/ETPicons/overlap.svg"/>
@@ -28,8 +28,8 @@ const Menu = (props) => {
       </div>
 
     </div>
-  )
-}
+  );
+};
 
 
 export default Menu;

@@ -1,5 +1,5 @@
 const faker = require('faker');
-const {memberCreate, productCreate, imageCreate} = require('./index.js')
+const {memberCreate, productCreate, imageCreate} = require('./index.js');
 
 // Random Number Generator
 const randomNumberGenerator = (max) => {
@@ -31,13 +31,13 @@ for (let i = 0; i < 100; i += 1) {
 for (let i = 0; i < 100; i += 1) {
   const Name = faker.internet.userName();
   const Skin_type = faker.vehicle.color();
-  const PrimaryId = i
+  const PrimaryId = i;
   memberCreate(Name, Skin_type, PrimaryId)
 };
 // // Image Document  Creation
 for (let i = 0; i < 100; i += 1) {
   const Url = memberImageGenerator();
-  const Member_id = randomNumberGenerator(100)
+  const Member_id = randomNumberGenerator(100);
   const Items_used = [randomNumberGenerator(100), randomNumberGenerator(100), randomNumberGenerator(100), randomNumberGenerator(100), randomNumberGenerator(100)];
   imageCreate(Url, Member_id, Items_used )
-}
+};

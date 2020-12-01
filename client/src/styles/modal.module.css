@@ -8,9 +8,8 @@
   top: 0%;
 }
 
-
 .modal  {
-  position: absolute;
+  position: relative;
   margin: 45px auto auto;
   background-color: #FFF;
   padding: 10px;

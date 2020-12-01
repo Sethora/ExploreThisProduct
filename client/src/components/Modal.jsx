@@ -1,17 +1,18 @@
 import React from 'react';
-import styles from '../styles/modal.module.css'
+import styles from '../styles/modal.module.css';
 import ProductPanel from './ProductPanel.jsx';
-import UserPanel from './UserPanel.jsx'
+import UserPanel from './UserPanel.jsx';
 
 
 const Modal = (props) => {
-  if(!props.show){
+  if (!props.show) {
     return null;
   }
 
   // member clicked
   const member = (props.currentMember[0] === undefined) ? {
     Name: '',
+    // eslint-disable-next-line camelcase
     Skin_type: ''
   } : props.currentMember[0];
   // products used
@@ -28,18 +29,18 @@ const Modal = (props) => {
             <img height='12px' src="https://quesbucket.s3.us-east-2.amazonaws.com/ETPicons/close.svg"/>
           </div>
         </div>
-          <div className={styles.modal_main}>
+        <div className={styles.modal_main}>
           <div className={styles.modal_imagebox}>
             <img className={styles.main_image} src={props.imageUrl}></img>
           </div>
           <div className={styles.info_panel}>
-              <UserPanel currentMember={member} avatar={props.imageUrl}/>
-              <ProductPanel products={products}/>
+            <UserPanel currentMember={member} avatar={props.imageUrl}/>
+            <ProductPanel products={products}/>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Modal;
