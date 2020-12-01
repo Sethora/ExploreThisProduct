@@ -42,7 +42,7 @@ class ExploreThisProduct extends React.Component {
 
   getMember() {
     const id = this.state.memberId;
-    axios.get(`/api/products/member/${id}`)
+    axios.get(`/api/items/member/${id}`)
       .then((response)=> {
         this.setState({currentMember: response.data});
       })
@@ -52,7 +52,7 @@ class ExploreThisProduct extends React.Component {
   }
 
   getProducts(ids) {
-    axios.get(`/api/products/${ids}`)
+    axios.get(`/api/items/${ids}`)
       .then((response)=> {
         this.setState({products: response.data});
       })
