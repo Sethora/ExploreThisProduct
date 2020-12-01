@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from '../styles/singleproduct.module.css'
+import styles from '../styles/singleproduct.module.css';
 
 
 const SingleProduct = (props) => {
-
   const mainStyles = props.applied ? styles.transform : styles.single_product;
+
   return (
     <div className={mainStyles}>
       <img className={styles.product_image} src={props.product.Url} ></img>
@@ -14,8 +14,8 @@ const SingleProduct = (props) => {
       <span className={styles.product_price}>${props.product.Price}.00</span>
       <div className={styles.add_button}>ADD</div>
     </div>
-  )
-}
+  );
+};
 
 export default SingleProduct;
 
