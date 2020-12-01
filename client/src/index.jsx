@@ -24,7 +24,7 @@ class App extends React.Component {
     const url = window.location.href.split('/');
     const candidateId = url[url.length - 1];
     const id = (isNaN(Number(candidateId)) || candidateId === '') ? 2 : Number(candidateId);
-    axios.get(`/api/products/images/${id}`)
+    axios.get(`/api/items/images/${id}`)
       .then((response)=> {
         this.setImages(response.data);
       })

@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-app.get('/api/products/images/:id', (req, res)=> {
+app.get('/api/items/images/:id', (req, res)=> {
   const candidateId = req.params.id || 2;
   const productId = (isNaN(Number(candidateId)) || candidateId === '') ? 2 : Number(candidateId);
 
@@ -26,7 +26,7 @@ app.get('/api/products/images/:id', (req, res)=> {
     });
 });
 
-app.get('/api/products/member/:id', (req, res) => {
+app.get('/api/items/member/:id', (req, res) => {
   const memberId = req.params.id;
   getMember(memberId)
     .then(results => {
@@ -38,7 +38,7 @@ app.get('/api/products/member/:id', (req, res) => {
     });
 });
 
-app.get('/api/products/:ids', (req, res)=> {
+app.get('/api/items/:ids', (req, res)=> {
   const productIds = req.params.ids.split(',').map(el => Number(el));
   getProductsUsed(productIds)
     .then((results)=>{
