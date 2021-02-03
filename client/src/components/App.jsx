@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import ExploreThisProduct from './ETPModule.jsx';
+import {getImages} from '../../api_helpers/helpers.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -23,9 +24,9 @@ class App extends React.Component {
     const url = window.location.href.split('/');
     const candidateId = url[url.length - 1];
     const id = (isNaN(Number(candidateId)) || candidateId === '') ? 2 : Number(candidateId);
-    axios.get(`/api/items/images/${id}`)
-      .then((response)=> {
-        this.setImages(response.data);
+    getImages(id)
+      .then(imageData => {
+        this.setImages(imageData);
       })
       .catch((error)=>{
         console.log(error);
