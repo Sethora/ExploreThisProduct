@@ -2,14 +2,16 @@ import React from 'react';
 import styles from '../styles/userpanel.module.css';
 
 const UserPanel = (props) => {
-  // eslint-disable-next-line camelcase
   const {Name, Skin_type} = props.currentMember;
 
   return (
     <div className={styles.userpanel}>
       <div className="image-details">
         <div className={styles.image_details_header}>
-          <div className="image-title-wrapper"><b style={{paddingRight: '3px'}}>blues</b><span>in Makeup Is Life</span></div>
+          <div className="image-title-wrapper">
+            <b style={{paddingRight: '3px'}}>blues</b>
+            <span>in Makeup Is Life</span>
+          </div>
           <div className="image-title-right" style={{color: ' #757575'}}>
             <span>Nov 20</span>
             <span className={styles.pipe}>|</span>
@@ -27,10 +29,15 @@ const UserPanel = (props) => {
               </div>
               <div className={styles.badges}>
                 <div>
-                  <img height='12px' src="https://quesbucket.s3.us-east-2.amazonaws.com/ETPicons/insider-badge.png"></img>
+                  <img height='12px'
+                    src="https://quesbucket.s3.us-east-2.amazonaws.com/ETPicons/insider-badge.png">
+                  </img>
                 </div>
                 <div style={{paddingLeft: '3px'}}>
-                  <img height='12px' src="https://quesbucket.s3.us-east-2.amazonaws.com/ETPicons/rookie-badge.png"></img>
+                  <img height='12px'
+                    src="https://quesbucket.s3.us-east-2.amazonaws.com/ETPicons/rookie-badge.png">
+
+                  </img>
                 </div>
               </div>
             </div>

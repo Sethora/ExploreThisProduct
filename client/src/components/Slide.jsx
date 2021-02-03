@@ -12,7 +12,13 @@ const Slide = (props) => {
   };
 
   return (
-    <a className={styles.image_slide} ><img src={props.image.Url} onClick={handleClick} height="164px" width="164px"></img></a>
+    <a className={styles.image_slide} >
+      <img src={props.image.Url}
+        onClick={handleClick}
+        height="164px"
+        width="164px">
+      </img>
+    </a>
   );
 };
 

@@ -2,7 +2,7 @@ const cors = require('cors');
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
-const {getMember, getMatchingImages, getProductsUsed} = require('../database/index.js');
+const {getMember, getMatchingImages, getProductsUsed} = require('../database/models');
 
 const app = express();
 const port = 2754;
@@ -59,6 +59,3 @@ app.listen(port, (req, res, next) => {
 
 module.exports = app;
 
-// if (process.env.NODE_ENV !== 'test') {
-//   app.listen(3000);
-// }
