@@ -17,7 +17,6 @@ const memberImageGenerator = () => {
   let url = `https://quesbucket.s3.us-east-2.amazonaws.com/Module+Photos/woman${randomNumber}.jpg`;
   return url;
 };
-
 // Product Document Creation
 for (let i = 0; i < 100; i += 1) {
   const Brand = faker.commerce.productName();
@@ -31,7 +30,7 @@ for (let i = 0; i < 100; i += 1) {
 for (let i = 0; i < 100; i += 1) {
   const Name = faker.internet.userName();
   const Skin_type = faker.vehicle.color();
-  const PrimaryId = i;
+  const PrimaryId = i
   memberCreate(Name, Skin_type, PrimaryId);
 }
 // // Image Document  Creation

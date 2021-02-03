@@ -65,7 +65,13 @@ class ExploreThisProduct extends React.Component {
   render() {
     return (
       <div className={styles.container}>
-        < Modal show={this.state.show} closeModal={this.closeModal} imageUrl={this.state.imageUrl} currentMember={this.state.currentMember} products={this.state.products}/>
+        < Modal
+          show={this.state.show}
+          closeModal={this.closeModal}
+          imageUrl={this.state.imageUrl}
+          currentMember={this.state.currentMember}
+          products={this.state.products}
+        />
         <div className={styles.divider}></div>
         <div className={styles.main}>
           <h2 className={styles.etp_header}>Explore This Product</h2>
@@ -88,13 +94,25 @@ class ExploreThisProduct extends React.Component {
                   <div className={styles.carousel_slide} id="set2">
                     {this.props.images.map((item, i)=> {
                       if (i >= 5 && i <= 10) {
-                        return <Slide image={item} imageClick={this.imageClick} memberId={this.state.memberId} imageUrl={this.state.imageUrl} items={this.state.items} getMember={this.getMember} getProducts={this.getProducts}/>;
+                        return <Slide
+                          image={item}
+                          imageClick={this.imageClick}
+                          memberId={this.state.memberId}
+                          imageUrl={this.state.imageUrl}
+                          items={this.state.items}
+                          getMember={this.getMember}
+                          getProducts={this.getProducts}/>;
                       }
                     })}
                   </div>
                 </div>
                 <a className={styles.direction} href="#set2">
-                  <svg viewBox="0 0 16 32" style={{height: '35px'}}><path d="M13.8 15.952L.3 30.28c-.1.1-.3.398-.3.697 0 .497.4.995.9.995.3 0 .5-.2.6-.3L15.6 16.75c.2-.298.4-.497.4-.796 0-.298-.1-.398-.2-.497l-.1-.1L1.5.33C1.4.23 1.2.032.9.032c-.5 0-.9.497-.9.995 0 .298.2.497.3.696l13.5 14.23z"></path></svg>
+                  <svg
+                    viewBox="0 0 16 32"
+                    style={{height: '35px'}}>
+                    <path d="M13.8 15.952L.3 30.28c-.1.1-.3.398-.3.697 0 .497.4.995.9.995.3 0 .5-.2.6-.3L15.6 16.75c.2-.298.4-.497.4-.796 0-.298-.1-.398-.2-.497l-.1-.1L1.5.33C1.4.23 1.2.032.9.032c-.5 0-.9.497-.9.995 0 .298.2.497.3.696l13.5 14.23z">
+                    </path>
+                  </svg>
                 </a>
               </div>
 
