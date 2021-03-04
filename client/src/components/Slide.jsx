@@ -1,19 +1,20 @@
 import React from 'react';
 import styles from '../styles/slide.module.css';
 
-const Slide = (props) => {
+const Slide = ({image, imageClick, getMember, getProducts}) => {
+
   const handleClick = () => {
-    const memberId = props.image.Member_id;
-    const url = props.image.Url;
-    const items = props.image.Items_used;
-    props.imageClick(memberId, url, items);
-    props.getMember();
-    props.getProducts(items);
+    const memberId = image.Member_id;
+    const url = image.Url;
+    const items = image.Items_used;
+    imageClick(memberId, url, items);
+    getMember();
+    getProducts(items);
   };
 
   return (
     <a className={styles.image_slide} >
-      <img src={props.image.Url}
+      <img src={image.Url}
         onClick={handleClick}
         height="164px"
         width="164px">
@@ -21,5 +22,6 @@ const Slide = (props) => {
     </a>
   );
 };
+
 
 export default Slide;
